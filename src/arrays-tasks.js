@@ -294,8 +294,16 @@ function distinct(arr) {
  *    createNDimensionalArray(4, 2) => [[[[0, 0], [0, 0]], [[0, 0], [0, 0]]], [[[0, 0], [0, 0]], [[0, 0], [0, 0]]]]
  *    createNDimensionalArray(1, 1) => [0]
  */
-function createNDimensionalArray(/* n, size */) {
-  throw new Error('Not implemented');
+function createNDimensionalArray(n, size) {
+  const arr = new Array(size);
+  if (n < 2) {
+    return arr.fill(0);
+  }
+
+  for (let i = 0; i < size; i += 1) {
+    arr[i] = createNDimensionalArray(n - 1, size);
+  }
+  return arr;
 }
 
 /**
