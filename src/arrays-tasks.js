@@ -395,8 +395,6 @@ function generateOdds(len) {
   const oddNumArr = arr.filter((elem) => elem % 2 !== 0);
   return oddNumArr;
 }
-generateOdds(5);
-console.log(generateOdds(5));
 
 /**
  * Returns an element from the multidimensional array by the specified indices.
@@ -410,8 +408,8 @@ console.log(generateOdds(5));
  *   getElementByIndices(['one','two','three'], [2]) => 'three'  (arr[2])
  *   getElementByIndices([[[ 1, 2, 3]]], [ 0, 0, 1 ]) => 2        (arr[0][0][1])
  */
-function getElementByIndices(/* arr, indices */) {
-  throw new Error('Not implemented');
+function getElementByIndices(arr, indices) {
+  return arr.flat(Infinity).splice(indices[indices.length - 1], 1);
 }
 
 /**
