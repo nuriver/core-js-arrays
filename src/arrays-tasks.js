@@ -424,8 +424,10 @@ function getElementByIndices(arr, indices) {
  *  getFalsyValuesCount([ -1, 'false', null, 0 ]) => 2
  *  getFalsyValuesCount([ null, undefined, NaN, false, 0, '' ]) => 6
  */
-function getFalsyValuesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getFalsyValuesCount(arr) {
+  const falsArr = [false, null, 0, '', undefined, NaN];
+  const finalArr = arr.filter((elem) => falsArr.includes(elem));
+  return finalArr.length;
 }
 
 /**
