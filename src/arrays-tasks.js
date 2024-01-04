@@ -390,9 +390,13 @@ function createChunks(arr, chunkSize) {
  *    generateOdds(2) => [ 1, 3 ]
  *    generateOdds(5) => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  const arr = Array.from({ length: len * 2 }, (val, i) => 1 + i);
+  const oddNumArr = arr.filter((elem) => elem % 2 !== 0);
+  return oddNumArr;
 }
+generateOdds(5);
+console.log(generateOdds(5));
 
 /**
  * Returns an element from the multidimensional array by the specified indices.
